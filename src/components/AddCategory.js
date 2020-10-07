@@ -12,11 +12,13 @@ export const AddCategory = ({ setCategories }) => {
     e.preventDefault();
     if (inputValue.trim().length < 1) return;
     setCategories((last) => [inputValue, ...last]);
+    setInputValue("");
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" value={inputValue} onChange={(e) => handleInputChange(e)} />
+      <p>{inputValue}</p>
+      <input type="text" value={inputValue} onChange={handleInputChange} />
     </form>
   );
 };
